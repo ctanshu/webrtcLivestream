@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const webrtc = require("wrtc");
-
+const port = process.env.Port || 5000;
 let senderStream;
 
 app.use(express.static('public'));
@@ -54,4 +54,4 @@ function handleTrackEvent(e, peer) {
 };
 
 
-app.listen(5000, () => console.log('server started'));
+app.listen(port, () => console.log('server started'));
